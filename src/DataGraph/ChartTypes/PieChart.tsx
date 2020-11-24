@@ -18,7 +18,7 @@ const PieChart: FC<PieChartProps> = ({ data }) => {
   }
 
   return (
-    <div className="pie">
+    <div>
       <Chart options={options} series={counts} type="donut" width="500" />
     </div>
   );

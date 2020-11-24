@@ -7,7 +7,7 @@ const UploadInstructions = () => {
       <li>{'Visit your profile workout history '}
         <a 
           href='https://members.onepeloton.com/profile/workouts'
-          rel='noreferrer'
+          rel="noopener noreferrer"
           target='_blank'
         >
           here.

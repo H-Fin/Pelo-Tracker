@@ -5,6 +5,12 @@ $white: #EFF2F1;
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
-.body {
-  color: $white;
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  overflow: auto;
+  height: 100%;
 }

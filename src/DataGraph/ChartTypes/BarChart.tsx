@@ -19,7 +19,7 @@ const BarChart: FC<BarChartProps> = ({ data }) => {
   };
 
   return (
-    <div className="bar">
+    <div>
       <Chart options={options} series={options.series} type="bar" width="800" />
     </div>
   );
