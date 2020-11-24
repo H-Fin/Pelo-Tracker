@@ -1,0 +1,10 @@
+// Your variable overrides
+$jumbotron-bg: #F4B942;
+$primary: #4059AD;
+$white: #EFF2F1;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.body {
+  color: $white;
+}
