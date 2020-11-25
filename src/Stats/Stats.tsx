@@ -31,6 +31,12 @@ const Stats: FC<StatsProps> = ({ data }) => {
           <p><span className={styles.emphasized}>{timeSpent.hours}</span> hours</p>
           <p><span className={styles.emphasized}>{timeSpent.minutes}</span> minutes</p>
         </div>
+        <div className={styles.statCard}>
+          <span className={styles.emphasized}>{Math.round(data.totalMiles)}</span><p>miles</p>
+        </div>
+        <div className={styles.statCard}>
+          <span className={styles.emphasized}>{Math.round(data.totalCalories)}</span><p>calories</p>
+        </div>
       </div>
 
       <p>Your favorite class type is <span className={styles.emphasized}>{favoriteClass[0]}</span>, taken <span className={styles.emphasized}>{favoriteClass[1]}</span> times.</p>

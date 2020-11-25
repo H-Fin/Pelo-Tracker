@@ -41,11 +41,13 @@ const Header: FC<HeaderProps> = ({ setResults }) => {
 
   return (
     <Jumbotron className={styles.headerRoot}>
-        <h1>Pelo Tracker</h1>
-        <UploadInstructions />
-        <div className={styles.buttons}>
-          <UploadButton className={styles.uploadButton} handleFileChange={handleFileChange} />
-          <DemoButton handleLoadDemoContent={handleLoadDemoContent} />
+        <h1>Peloton Metrics</h1>
+        <div className={styles.headerContent}>
+          <UploadInstructions />
+          <div className={styles.buttons}>
+            <UploadButton className={styles.uploadButton} handleFileChange={handleFileChange} />
+            <DemoButton handleLoadDemoContent={handleLoadDemoContent} />
+          </div>
         </div>
     </Jumbotron>
   );

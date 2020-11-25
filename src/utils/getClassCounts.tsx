@@ -2,11 +2,13 @@ import { Data, Result } from './types';
 
 const getData = (results: any) => {
   let data: Data = {
-    'totalClasses': 0, 
-    'totalTime': 0, 
+    'totalClasses': 0,
+    'totalTime': 0,
+    'totalMiles': 0,
+    'totalCalories': 0,
     'startDate': new Date (results[0].workoutTimestamp),
     'endDate': new Date (results[results.length - 1].workoutTimestamp),
-    'classTypes': {}, 
+    'classTypes': {},
     'instructors': {}
   };
 
@@ -18,9 +20,11 @@ const getData = (results: any) => {
       // Calculate total time of classes taken in minutes
       data.totalTime += results[i].lengthMinutes;
 
-      // TODO: Calculate total miles traveled
+      // Calculate total distance traveled in miles
+      data.totalMiles += results[i].distanceMi;
 
-      // TODO: Calculate total calories burned
+      // Calculate total calories burned
+      data.totalCalories += results[i].caloriesBurned;
 
       // Calculate types of classes taken and count
       getClassCount(results[i], data);
@@ -29,7 +33,7 @@ const getData = (results: any) => {
       getInstructorCount(results[i], data);
     }
   }
-  console.log(data);
+  console.log(data, results);
   return data;
 }
 
