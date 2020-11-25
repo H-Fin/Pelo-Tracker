@@ -1,7 +1,5 @@
-// Your variable overrides
-$jumbotron-bg: #F4B942;
-$primary: #4059AD;
-$white: #EFF2F1;
+// Variable overrides //
+@import './variables.scss';
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
@@ -13,4 +11,8 @@ html {
 body {
   overflow: auto;
   height: 100%;
+}
+
+h2 {
+  margin: 0;
 }

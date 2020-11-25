@@ -1,6 +1,8 @@
 export type Data = {
-  totalClasses: 0,
-  totalTime: 0,
+  totalClasses: number,
+  totalTime: number,
+  startDate: Date,
+  endDate: Date,
   classTypes: { [key: string]: number },
   instructors: { [key: string]: number}
 };

@@ -23,7 +23,7 @@ const DataGraph: FC<DataGraphProps> = ({ data }) => {
   return (
     <div className={styles.root}>
       <Dropdown className={styles.dropdown} options={options} selectedOption={selectedOption} handleSelect={handleSelect} />
-      {selectedOption === options[0] && <PieChart data={data.classTypes} />}
+      {selectedOption === options[0] && <PieChart data={data.classTypes} className={styles.pieChart} />}
       {selectedOption === options[1] && <BarChart data={data.instructors} />}
     </div>
   );

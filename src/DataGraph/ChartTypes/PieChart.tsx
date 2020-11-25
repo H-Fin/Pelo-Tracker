@@ -2,10 +2,11 @@ import React, { FC } from 'react';
 import Chart from 'react-apexcharts'
 
 type PieChartProps = {
-  data: { [key: string]: number }
+  data: { [key: string]: number },
+  className?: string
 };
 
-const PieChart: FC<PieChartProps> = ({ data }) => {
+const PieChart: FC<PieChartProps> = ({ data, className }) => {
 
   const labels = Object.keys(data);
   const counts = Object.values(data);
@@ -14,12 +15,13 @@ const PieChart: FC<PieChartProps> = ({ data }) => {
     plotOptions: {
       pie: { donut: { size: '0%' }}
     },
-    labels: labels
+    labels: labels,
+    colors : ['#4059AD', '#97D8C4', '#F4B942', '#6A041D', '#397367', '#AD5D4E']
   }
 
   return (
-    <div>
-      <Chart options={options} series={counts} type="donut" width="500" />
+    <div className={className}>
+      <Chart options={options} series={counts} type="donut" height="400" width="600" />
     </div>
   );
 }

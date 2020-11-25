@@ -1,7 +1,14 @@
 import { Data, Result } from './types';
 
 const getData = (results: any) => {
-  let data: Data = {'totalClasses': 0, 'totalTime': 0, 'classTypes': {}, 'instructors': {}};
+  let data: Data = {
+    'totalClasses': 0, 
+    'totalTime': 0, 
+    'startDate': new Date (results[0].workoutTimestamp),
+    'endDate': new Date (results[results.length - 1].workoutTimestamp),
+    'classTypes': {}, 
+    'instructors': {}
+  };
 
   for(let i = 0; i < results.length; i++) {
     if(results[i].workoutTimestamp) {
@@ -15,10 +22,6 @@ const getData = (results: any) => {
 
       // TODO: Calculate total calories burned
 
-      // TODO: Calculate start date
-
-      // TODO: Calculate end date
-
       // Calculate types of classes taken and count
       getClassCount(results[i], data);
 
@@ -26,6 +29,7 @@ const getData = (results: any) => {
       getInstructorCount(results[i], data);
     }
   }
+  console.log(data);
   return data;
 }
 

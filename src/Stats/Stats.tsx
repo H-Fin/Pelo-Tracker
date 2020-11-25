@@ -12,14 +12,29 @@ const Stats: FC<StatsProps> = ({ data }) => {
   const favoriteInstructor = getFavorite(data, 'instructors');
   const timeSpent = convertMinutes(data.totalTime);
 
+  const startMonth = data.startDate.toLocaleString('default', { month: 'long' });
+  const startDate = startMonth + ' ' + data.startDate.getDate() + ', ' + data.startDate.getFullYear();
+  const endMonth = data.endDate.toLocaleString('default', { month: 'long' });
+  const endDate = endMonth + ' ' + data.endDate.getDate() + ', ' + data.endDate.getFullYear();
+
   return (
     <div className={styles.root}>
       <h2>Your Data</h2>
-      <p role='doc-subtitle'>From (start date here) - (end date here).</p>
-      <p>You have taken {data.totalClasses} classes.</p>
-      <p>You have spent {timeSpent.days} days, {timeSpent.hours} hours, and {timeSpent.minutes} minutes working out.</p>
-      <p>Your favorite class type is {favoriteClass[0]}, taken {favoriteClass[1]} times.</p>
-      <p>Your favorite instructor is {favoriteInstructor[0]}, taken {favoriteInstructor[1]} times.</p>
+      <p role='doc-subtitle' className={styles.subheader}>From {startDate} - {endDate}.</p>
+
+      <div className={styles.cards}>
+        <div className={styles.statCard}>
+          <span className={styles.emphasized}>{data.totalClasses}</span><p>classes</p>
+        </div>
+        <div className={styles.statCard}>
+          <p><span className={styles.emphasized}>{timeSpent.days}</span> days</p>
+          <p><span className={styles.emphasized}>{timeSpent.hours}</span> hours</p>
+          <p><span className={styles.emphasized}>{timeSpent.minutes}</span> minutes</p>
+        </div>
+      </div>
+
+      <p>Your favorite class type is <span className={styles.emphasized}>{favoriteClass[0]}</span>, taken <span className={styles.emphasized}>{favoriteClass[1]}</span> times.</p>
+      <p>Your favorite instructor is <span className={styles.emphasized}>{favoriteInstructor[0]}</span>, taken <span className={styles.emphasized}>{favoriteInstructor[1]}</span> times.</p>
     </div>
   );
 }

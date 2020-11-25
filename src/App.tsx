@@ -3,6 +3,7 @@ import getData from './utils/getClassCounts';
 import Header from './Header/Header';
 import DataGraph from './DataGraph/DataGraph';
 import Stats from './Stats/Stats';
+import FooterBar from './FooterBar/FooterBar';
 import './app.scss';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Header setResults={setResults} />
       {data && <DataGraph data={data} />}
       {data && <Stats data={data} />}
+      <FooterBar />
     </div>
   );
 }

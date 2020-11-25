@@ -1,0 +1,22 @@
+@import '../variables.scss';
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #97D8C4;
+  color: $black;
+  width: 100vw;
+  padding: 1rem;
+}
+
+.icon {
+  color: $black;
+  margin-left: .75rem;
+}
+
+.footerText {
+  padding-top: 6px;
+  font-size: 1rem;
+  margin: 0;
+}

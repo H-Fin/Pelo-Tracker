@@ -1,7 +1,38 @@
+@import '../variables.scss';
+
 .root {
-  background-color: #97D8C4;
+  background-color: $primary;
+  color: $white;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 1rem;
+}
+
+.subheader {
+  font-size: $font-size-base * .75;
+}
+
+.emphasized {
+  font-weight: bold;
+  color: #F4B942;
+}
+
+.cards {
+  display: flex;
+  flex-basis: 0;
+  justify-content: space-between;
+  flex-direction: row;
+
+  p {
+    margin: 0;
+  }
+}
+
+.statCard {
+  text-align: center;
+  width: 300px;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  border: 2px solid $white;
 }
